@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+server/node_modules
 # Windows shortcuts
 *.lnk
 
