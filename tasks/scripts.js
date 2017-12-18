@@ -12,7 +12,7 @@ import {log, colors} from 'gulp-util';
 import args from './util/args';
 
 gulp.task('scripts', () => {
-  return gulp.src(['app/js/index.js'])
+  return gulp.src(['app/js/main/*.js'])
   .pipe(plumber({ //文件流操作 防止管道处理时出错不能往下走
     errorHandle: function () {
 
