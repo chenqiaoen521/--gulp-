@@ -2,6 +2,5 @@ import gulp from 'gulp';
 import del from 'del';
 import args from './util/args';
 gulp.task('clean', (cb)=>{
-  return cb();
-  //return del(['server/public']);//, 'server/views'
+  return del(['server/public','server/views', 'app/css']);
 });

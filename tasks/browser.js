@@ -8,5 +8,6 @@ gulp.task('browser', (cb)=>{
   if (!args.watch) return cb();
   gulp.watch('app/**/*.js', ['scripts']);
   gulp.watch('app/**/*.ejs', ['pages']);
-  gulp.watch('app/**/*.styl', ['css']);
+  gulp.watch('app/stylus/*.styl', ['stylus']);
+  gulp.watch('app/css/*.css', ['css']);
 });
