@@ -1,2 +1,2 @@
-import 'babel-polyfill';
-import '../class/set.js';
+import 'babel-polyfill'
+import './lottery.js'
