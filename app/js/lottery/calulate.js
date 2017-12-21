@@ -5,7 +5,7 @@ export default class Calulate {
     const exist = this.play_list.has(play_name);
     const arr = new Array(active).fill(0);
     if (exist && play_name.at(0) === 'r') {
-      count = Calulate.combine(arr,play_name.split('')[1]);
+      count = Calulate.combine(arr,parseInt(play_name.split('')[1])).length;
     }
     return count;
   }
@@ -59,7 +59,7 @@ export default class Calulate {
       if (size > arrLen) {
         return;
       }
-      if (size === arrLen) {
+      if (size == arrLen) {
         allResult.push([].concat(result,arr))
       }else {
         for (let i=0; i < arrLen; i++) {
@@ -76,6 +76,7 @@ export default class Calulate {
         }
       }
     })(arr,size,[])
+    return allResult
   }
 
 }
