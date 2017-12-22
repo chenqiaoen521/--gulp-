@@ -14047,7 +14047,7 @@ var Lottery = function (_mix) {
       (0, _jquery2.default)('.boll-list').on('click', '.btn-boll', self.toggleCodeActive.bind(self));
       (0, _jquery2.default)('#confirm_sel_code').on('click', self.addCode.bind(self));
       (0, _jquery2.default)('.dxjo').on('click', 'li', self.assistHandle.bind(self));
-      (0, _jquery2.default)('qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
+      (0, _jquery2.default)('.qkmethod').on('click', '.btn-middle', self.getRandomCode.bind(self));
     }
   }]);
 
@@ -19841,7 +19841,7 @@ var Base = function () {
       var active = $active ? $active.length : 0;
       var count = self.computeCount(active, self.cur_play);
       if (count) {
-        self.addCodeItem($active.join(''), self.cur_play, self.play_list.get(self.cur_play).name, count);
+        self.addCodeItem($active.join(' '), self.cur_play, self.play_list.get(self.cur_play).name, count);
       }
     }
     //添加单次号码
@@ -19894,11 +19894,11 @@ var Base = function () {
     value: function getRandom(num) {
       var arr = [],
           index = void 0;
-      var number = array.from(this.number);
+      var number = Array.from(this.number);
       while (num--) {
-        index = Number.parseInt(Math.arndom() * number.length);
+        index = Number.parseInt(Math.random() * number.length);
         arr.push(number[index]);
-        num.splice(index, 1);
+        arr.splice(index, 1);
       }
       return arr.join(' ');
     }
@@ -19915,7 +19915,7 @@ var Base = function () {
         (0, _jquery2.default)(self.cart_el).html('');
       } else {
         for (var i = 0; i < num; i++) {
-          self.addCodeItem(self.getRandom(play), self.cur_play, play_list.get(self.cur_play).name, 1);
+          self.addCodeItem(self.getRandom(play), self.cur_play, self.play_list.get(self.cur_play).name, 1);
         }
       }
     }
@@ -20162,6 +20162,7 @@ var Interface = function () {
   }, {
     key: 'getOpenCode',
     value: function getOpenCode(issue) {
+      var self = this;
       return new Promise(function (resolve, reject) {
         _jquery2.default.ajax({
           url: '/get/opencode',

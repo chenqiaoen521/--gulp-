@@ -23,6 +23,7 @@ class Interface{
 
   /**获取开奖号码*/
   getOpenCode(issue) {
+    let self = this;
     return new Promise((resolve,reject) => {
       $.ajax({
         url: '/get/opencode',

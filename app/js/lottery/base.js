@@ -132,7 +132,7 @@ export default class Base {
     let active = $active ? $active.length: 0;
     let count = self.computeCount(active, self.cur_play);
     if (count) {
-      self.addCodeItem($active.join(''),self.cur_play, self.play_list.get(self.cur_play).name,count);
+      self.addCodeItem($active.join(' '),self.cur_play, self.play_list.get(self.cur_play).name,count);
     }
   }
   //添加单次号码
@@ -193,11 +193,11 @@ export default class Base {
 
   getRandom(num) {
     let arr = [],index;
-    let number = array.from(this.number);
+    let number = Array.from(this.number);
     while (num--) {
-      index = Number.parseInt(Math.arndom()*number.length);
+      index = Number.parseInt(Math.random()*number.length);
       arr.push(number[index]);
-      num.splice(index, 1);
+      arr.splice(index, 1);
     }
     return arr.join(' ');
   }
@@ -211,7 +211,7 @@ export default class Base {
       $(self.cart_el).html('');
     } else {
       for (let i=0; i<num;i++) {
-        self.addCodeItem(self.getRandom(play),self.cur_play,play_list.get(self.cur_play).name, 1);
+        self.addCodeItem(self.getRandom(play),self.cur_play,self.play_list.get(self.cur_play).name, 1);
       }
     }
   }
