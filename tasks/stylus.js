@@ -5,7 +5,7 @@ import args from './util/args';
 import gulpStylus from 'gulp-stylus';
 
 gulp.task('stylus', ()=>{
-  return gulp.src('app/stylus/*.styl')
+  return gulp.src('app/stylus/index.styl')
   .pipe(gulpStylus({
     compress: false
   }))
