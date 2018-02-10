@@ -2,7 +2,7 @@
   
 
   document.addEventListener("DOMContentLoaded", ()=>{
-      let draw = function (count) {
+    let draw = function (count) {
     console.log(`剩余${count}次`);
   }
   let residue = function* (count) {
